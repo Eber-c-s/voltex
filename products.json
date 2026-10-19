@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Cable THHN 2,5 mm² (100 m)",
+    "brand": "INDECO",
+    "price": 32990,
+    "status": "En stock",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA1JqloxvqUQchIcnkY5C-DOUH767GdrWyz-yeJplWAfuseqVP2-o2FWmlGxJ2HciG3X7DJ-uOw8_DqFme0OlX0MxzrnP3_gLSvEQjYawdgcf_7ScoIFm3JPpJnB7svnVRT6TC-dJHkg5CWvMolit-Wk990ARP_vp5_nSgE-E0KwXJPtAKAEXapyvfWsLYyesCDUasQKDpum6fRsNnzZdJoVlinm13Zf198rqFSXTEsk4CHhWLshKSFkg",
+    "category": "Cables"
+  },
+  {
+    "name": "Interruptor simple 1 vía",
+    "brand": "LEGRAND",
+    "price": 2490,
+    "status": "En stock",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDG-Tp6zIdm3hr3Rpbb9K1VAX5T6D7IKNvd-EBJur6eWTizac1RAsPEgwq0Wr97d5Tg0n1nUXDlYEf2kJzee4pcGejDkIEstaQdQoGcAjLUpDeabkyxGusClJMjEKKTjcPEmcoxCBERdsYeVZ5Yevt1_L8Oq0XKj5QR2xthuWnJ9Qxf2wcW0PGQ7IOhl1F5tTkqKFVOdnUkd40pmKbYLTk0NfIGUnfTtstMz-gsin3mXygwQAawP2mOdA",
+    "category": "Materiales eléctricos"
+  },
+  {
+    "name": "Proyector LED 100W IP65",
+    "brand": "PHILIPS",
+    "price": 24990,
+    "status": "Poco stock",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC-LDfTikRisMFep8Px0p6JjiwKpQBROQR65ZjaIamUQ_0I6gX-ABb2-1cczIsV8GqAgZhjr8tti5O4FXbP7BhkOziUJBwcnEZCGBOiiln_vjr2cPrLWCZitMpqkDyuw1JKce1I98Uk-yCNsdFtFzbDWUruLrlvzGPeqW84_3g0KS4-5HHfDRydcO_0uJ0wgLXnwrJLm-bhzndtHYQVCUiou1ZfctTdEZkqU-mw3tm1JfEBUxQir2M-dg",
+    "category": "Iluminación"
+  },
+  {
+    "name": "Taladro inalámbrico 12V",
+    "brand": "DEWALT",
+    "price": 89990,
+    "status": "En stock",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC2iD5pSRmUxMUj8_B1GgdgbvIKkkB_hL1wkoUYDBo8pNwLECoYwxRz5t_v7cC7eshQSCq7CG4MmegnWf7Qxe-OkxjRtHaVe2zIEH18pcF7EOL3pHAeLmYKjvZkzkbt2YGHHs0M7OQsEFWm-S4yncCM0UCPTz3rzcwl-yRbVwILfZiWEcn4esT11mFvbz-q-CdstO3ff6kzDCeWwFOC_28HLlvwxF9h_JGT5mYXxdDaNkKdyqmo95gS1w",
+    "category": "Herramientas"
+  },
+  {
+    "name": "Cable UTP Cat 6 (305 m)",
+    "brand": "LINKMADE",
+    "price": 59990,
+    "status": "En stock",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuB7fDwysVd6qtb1YcXaH_60-3GpqWtHOmQvv-4UTgSGpzrcfFfRRInNQdWnZX61njpCSCww1-fN_aIJI1N5rbiQyq7qJ5_iKYwNJIuD8V8QFx5brkHOgD19bsyVq2G41TscLRPM42TreOwC3JaoBsLe1rG-a9FWYAwol2vJOLZxAPZDs6LFo9qPoNJKUmVGAoo1uccuOdpASu5jpG1x1dSga6f52qyn5mbMUmQmyn-NRatOycwYEUiI-A",
+    "category": "Cables"
+  },
+  {
+    "name": "Ampolleta LED 15W E27",
+    "brand": "OSRAM",
+    "price": 3990,
+    "status": "Agotado",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAmCDInC5sEpqqNBfxrNKC04MG-LBjZzR1GPlhnvgFwEzYLawqiFLrH3QMng8S0wnavTIT-SbdHHkouEfMtRWu6-TXrZrSx0mbQ_FS6wAQfFDiXs0fAJjICNYmfywHm39TSwMrWcjeqsR4E9A-LqgEbJtqSQ1UnBMeavbWpjnkR2dfMU3Iv8FJ2ROEl7oVw_R5LGDC3KzwPQG37RasisZcFySdo4M63uQ-DmnHZz40AdK9l5i9PF72Trg",
+    "category": "Iluminación"
+  },
+  {
+    "name": "Tablero sobrepuesto 12 módulos",
+    "brand": "SINEC",
+    "price": 27990,
+    "status": "En stock",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAZdVhrcjZPTu-JYyJR6CvW2R88gJ8dGrfVzSfVa0gNfHgYJ8XTiyoP4WM2RDC4kaYFeOevqMZE5PmmEeOSo9RUHKC3ZYMFAwBJGnJadUh-rWd9LjKpsQCncxtTvezoXc5b_QfaLTH2ELxvijw6V7jwDHaNN6f4rQ3BfqGJm3RqATjUzzHYNu2gXDdSGf0jFjHtVKOZFj1EeaVpPddvJBlpL6mREnxWfS1F6fRIgTMyzTuoRTXCYilW2g",
+    "category": "Materiales eléctricos"
+  },
+  {
+    "name": "Cable flexible 4 mm² (100 m)",
+    "brand": "INDECO",
+    "price": 42990,
+    "status": "Poco stock",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBQ7HVkMpF0PkJ77LS-zYn4-VxhXGTSd5BUhMoUsM_A9LMiq7Kv4JJVBNaGX-YpA1-w6-rf6juQX8bnITh1r-LxY6AgBcBe_DhBJMHNvGWDsLyIHanSZXu2bEEryI0x6kAyrTF17IRRYy9DUKZmNLn1Ew-ffoo-2ROUyfRi1wwSx16BN1hiyS2O-hXup05XkdZLYXofwFXlAHJytfzk62jo7KGyuuOVAsdzuZ2OScf1LRVplq29FvYJiA",
+    "category": "Cables"
+  }
+]

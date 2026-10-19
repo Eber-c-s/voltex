@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>VOLTEX — La Casa del Electricista</title>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FFD400',
+              yellowHover: '#E5BF00',
+              dark: '#0D0D0D',
+              cardDark: '#141414',
+              surface: '#1A1A1A',
+              border: '#262626'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Core Styles -->
+<style data-purpose="core-styling">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      background-color: #F8F9FA;
+    }
+    .tap-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="text-zinc-800 antialiased font-sans selection:bg-brand-yellow selection:text-black pb-20">
+<!-- BEGIN: MobileHeader -->
+<header class="sticky top-0 z-50 bg-[#0A0A0A] border-b border-zinc-800 px-4 py-3 flex items-center justify-between shadow-md" data-purpose="sticky-header">
+<a aria-label="Voltex Inicio" class="flex items-center gap-2.5 focus:outline-none" href="#inicio">
+<img alt="Logo VOLTEX" class="h-9 w-9 object-contain rounded-full border border-brand-yellow/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYSeceMobqUXzEtbtyJZR90fVBtFuXjKnprF7gFfwkdXiZC8zW6IaupJuZY8ihB8QNU0a2OgwdfquUTrs2tLrwPA1KICGOtpwWfgs8H9v_FZcYGCfqGrQ8zJ_jDXPAQEj4G69oVlWDYj1zImO2ZIINOKobjhJFKBo2e6LblNC1Qp8lLb3eS8bnfT60Ju8wtCmOsPq_vbUr0QJ3xLU2fnFdIxwi-xrYMZOTGu3xPB5AcRI23g_Kd0Aztg"/>
+<div class="flex flex-col">
+<span class="text-lg font-black tracking-wider text-white leading-tight flex items-center">
+          VOLTEX
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-yellow ml-1"></span>
+</span>
+<span class="text-[9px] font-bold tracking-widest text-zinc-400 uppercase -mt-0.5">
+          La Casa del Electricista
+        </span>
+</div>
+</a>
+<!-- Hamburger Menu Button -->
+<button aria-label="Abrir menú" class="tap-target w-11 h-11 flex items-center justify-center text-white bg-zinc-900 rounded-lg border border-zinc-700 active:bg-zinc-800 text-lg" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button">
+<i class="fa-solid fa-bars"></i>
+</button>
+</header>
+<!-- END: MobileHeader -->
+<!-- BEGIN: MobileNavDrawer -->
+<nav class="hidden fixed inset-0 z-40 bg-black/80 backdrop-blur-sm" data-purpose="mobile-nav-drawer" id="mobile-drawer">
+<div class="bg-[#0F0F0F] w-4/5 max-w-xs h-full p-6 flex flex-col justify-between border-r border-zinc-800">
+<div>
+<div class="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
+<span class="text-white font-bold tracking-wide">MENÚ</span>
+<button class="text-zinc-400 hover:text-white p-2" onclick="document.getElementById('mobile-drawer').classList.add('hidden')" type="button">
+<i class="fa-solid fa-xmark text-xl"></i>
+</button>
+</div>
+<ul class="space-y-4 text-sm font-semibold tracking-wide text-zinc-200">
+<li><a class="block py-2 hover:text-brand-yellow" href="#catalogo" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Catálogo</a></li>
+<li><a class="block py-2 hover:text-brand-yellow" href="#categorias" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Categorías</a></li>
+<li><a class="block py-2 hover:text-brand-yellow" href="#servicios" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Servicios</a></li>
+<li><a class="block py-2 hover:text-brand-yellow" href="#local" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">El Local</a></li>
+<li><a class="block py-2 hover:text-brand-yellow" href="#contacto" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Contacto</a></li>
+</ul>
+</div>
+<div class="pt-6 border-t border-zinc-800">
+<a class="flex items-center justify-center gap-2 w-full py-3 bg-brand-yellow text-black font-bold text-xs uppercase rounded-lg" href="https://wa.me/">
+<i class="fa-brands fa-whatsapp text-base"></i> Consultar WhatsApp
+        </a>
+</div>
+</div>
+</nav>
+<!-- END: MobileNavDrawer -->
+<!-- BEGIN: HeroSection -->
+<section class="relative bg-black text-white px-4 pt-7 pb-8 overflow-hidden" data-purpose="hero-section">
+<!-- Background overlay hint -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-[#121212] z-0 pointer-events-none"></div>
+<div class="relative z-10">
+<span class="inline-block text-[10px] font-bold tracking-widest uppercase text-brand-yellow mb-2 bg-brand-yellow/10 px-2.5 py-1 rounded">
+        MATERIALES ELÉCTRICOS • HERRAMIENTAS • ILUMINACIÓN
+      </span>
+<h1 class="text-2xl font-black leading-tight text-white mb-2">
+        Todo lo que necesitas <br/><span class="text-brand-yellow">en un solo lugar</span>
+</h1>
+<p class="text-xs text-zinc-400 mb-5">
+        Revisa nuestro stock online en tiempo real antes de visitarnos.
+      </p>
+<!-- Search Bar -->
+<form action="#catalogo" class="flex flex-col gap-2" data-purpose="catalog-search-form" method="GET">
+<div class="relative flex items-center">
+<i class="fa-solid fa-magnifying-glass absolute left-3.5 text-zinc-400 text-sm"></i>
+<input class="w-full bg-zinc-900 border border-zinc-700 text-white placeholder-zinc-500 text-xs rounded-lg pl-9 pr-3 py-3 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent" placeholder="Busca cables, enchufes, protecciones..." type="search"/>
+</div>
+<button class="tap-target w-full bg-brand-yellow active:bg-brand-yellowHover text-black font-extrabold text-xs uppercase tracking-wider py-3 rounded-lg flex items-center justify-center gap-2 shadow-sm" type="submit">
+<span>Ver catálogo completo</span>
+<i class="fa-solid fa-arrow-right text-xs"></i>
+</button>
+</form>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: CategoriesSection -->
+<section class="px-4 py-6 bg-white border-b border-zinc-200" data-purpose="categories-slider" id="categorias">
+<div class="flex items-center justify-between mb-3.5">
+<div>
+<h2 class="text-base font-extrabold text-black">Categorías</h2>
+<p class="text-[11px] text-zinc-500">Encuentra rápido por especialidad</p>
+</div>
+<span class="text-[11px] font-bold text-amber-600">5 áreas</span>
+</div>
+<!-- Horizontal scroll categories for smooth touch experience -->
+<div class="flex gap-2.5 overflow-x-auto hide-scrollbar pb-1">
+<!-- Category 1 -->
+<a class="flex-shrink-0 w-28 bg-[#121212] rounded-xl p-3 text-center border border-zinc-800 active:border-brand-yellow transition-colors" href="#catalogo">
+<div class="w-9 h-9 mx-auto rounded-full bg-zinc-800 text-brand-yellow flex items-center justify-center text-sm mb-2">
+<i class="fa-solid fa-plug"></i>
+</div>
+<p class="text-white font-bold text-[11px] leading-tight">Materiales Eléctricos</p>
+</a>
+<!-- Category 2 -->
+<a class="flex-shrink-0 w-28 bg-[#121212] rounded-xl p-3 text-center border border-zinc-800 active:border-brand-yellow transition-colors" href="#catalogo">
+<div class="w-9 h-9 mx-auto rounded-full bg-zinc-800 text-brand-yellow flex items-center justify-center text-sm mb-2">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+</div>
+<p class="text-white font-bold text-[11px] leading-tight">Herramientas</p>
+</a>
+<!-- Category 3 -->
+<a class="flex-shrink-0 w-28 bg-[#121212] rounded-xl p-3 text-center border border-zinc-800 active:border-brand-yellow transition-colors" href="#catalogo">
+<div class="w-9 h-9 mx-auto rounded-full bg-zinc-800 text-brand-yellow flex items-center justify-center text-sm mb-2">
+<i class="fa-regular fa-lightbulb"></i>
+</div>
+<p class="text-white font-bold text-[11px] leading-tight">Iluminación</p>
+</a>
+<!-- Category 4 -->
+<a class="flex-shrink-0 w-28 bg-[#121212] rounded-xl p-3 text-center border border-zinc-800 active:border-brand-yellow transition-colors" href="#catalogo">
+<div class="w-9 h-9 mx-auto rounded-full bg-zinc-800 text-brand-yellow flex items-center justify-center text-sm mb-2">
+<i class="fa-solid fa-dharmachakra"></i>
+</div>
+<p class="text-white font-bold text-[11px] leading-tight">Cables</p>
+</a>
+<!-- Category 5 -->
+<a class="flex-shrink-0 w-28 bg-[#121212] rounded-xl p-3 text-center border border-zinc-800 active:border-brand-yellow transition-colors" href="#catalogo">
+<div class="w-9 h-9 mx-auto rounded-full bg-zinc-800 text-brand-yellow flex items-center justify-center text-sm mb-2">
+<i class="fa-solid fa-gears"></i>
+</div>
+<p class="text-white font-bold text-[11px] leading-tight">Automatización</p>
+</a>
+</div>
+</section>
+<!-- END: CategoriesSection -->
+<!-- BEGIN: FeaturedCatalog -->
+<section class="px-3.5 py-6" data-purpose="product-catalog" id="catalogo">
+<!-- Header title -->
+<div class="mb-4">
+<h2 class="text-lg font-black text-black tracking-tight">Catálogo destacado</h2>
+<p class="text-xs text-zinc-600">Productos en stock con precios reales. Compra fácil y rápido.</p>
+</div>
+<!-- Filter Toggle Bar for Mobile -->
+<div class="flex items-center justify-between bg-white border border-zinc-200 rounded-lg p-2.5 mb-4 shadow-sm">
+<div class="flex items-center gap-2 text-xs font-bold text-zinc-700">
+<i class="fa-solid fa-sliders text-brand-yellow bg-black p-1.5 rounded"></i>
+<span>Filtros y categorías</span>
+</div>
+<span class="text-[10px] font-bold bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded-full border border-zinc-300">
+        8 productos
+      </span>
+</div>
+<!-- 2 Column Mobile Product Grid -->
+<div class="grid grid-cols-2 gap-2.5" data-purpose="catalog-grid">
+<!-- Product Card 1 -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded">En stock</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Cable THHN 2,5 mm²" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAycQoqjdwcgDRXRiNKF4D7hawrmvzrcyHFQN5w1r3KPnxDzlvIUSVqAC4sLSc3HW2JyoZIt0KR2-2ZxOeeqbxCE2oteXRNJr52jwJQhZnEZhLWESKj7BST3ZZkHehAlMNmnFekS1aC6Qazhue7Jns2SayhlQEwDC07rhXHm16ip-DOXxseVbASmMykjQkGscmhlvA_vR0XKX9vni_aJ6_9G1fIIiOLPe_ViJh1Tq8MO0v6Goy13xzBQw"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Cable THHN 2,5 mm² (100 m)</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">INDECO</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-black mb-2">$ 32.990</p>
+<a class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20VOLTEX,%20consulto%20por%20Cable%20THHN%202.5mm">
+<i class="fa-brands fa-whatsapp text-xs"></i> Consultar
+          </a>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded">En stock</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Interruptor simple 1 vía" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqW55efJsSsrip_cjB0EUB1pwXA8qxwXaGUWFsPwlLIBw1lLjxEtHggnFHQDE-wEVDPSJ26dmbeXe07rHQTseTWO0IepmNyWHvuJXcEHMLUo2oQHcRdBEBcQloXoypsDFUNSzXM7COWVUFhw6UUVtJRuF5su4ynTGQylUX2BH35V7PnQaChrh9klZTfj4HksBCvhjkmo2wInriaPzQVDj1SV3ERZSEqY_TDOYvktjb3Z5VlD-9KyLqlA"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Interruptor simple 1 vía</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">LEGRAND</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-black mb-2">$ 2.490</p>
+<a class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20VOLTEX,%20consulto%20por%20Interruptor%20Legrand">
+<i class="fa-brands fa-whatsapp text-xs"></i> Consultar
+          </a>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-2 py-0.5 rounded">Poco stock</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Proyector LED 100W IP65" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVRmtR4JT8N65MxBFGOhdR9_T5vd4MEouzS4E69YwOOuTwN_uyh2c70b-Ifv2-wGP7LypVxKA1eYzI1zP9wIxNEBZplF428bSNxJ0FUUCsEoLsUm5tTWP6hA6bSwOt1LEy7IjEXpmMtBieFbxDNQ6vIpWUbEx3wm0UpEfnecAqwUfr88IWoqbHsYr7EPhLPn0BZ_35DuA15UKW4b8kj5lBe74NgXS-7la8-nkAdFbq02WErIxl1F-vzQ"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Proyector LED 100W IP65</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">PHILIPS</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-black mb-2">$ 24.990</p>
+<a class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20VOLTEX,%20consulto%20por%20Proyector%20LED%20Philips">
+<i class="fa-brands fa-whatsapp text-xs"></i> Consultar
+          </a>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded">En stock</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Taladro inalámbrico 12V" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOVxcrsWe55-QYJn6tpM2t8I99fHMVUUZ-gXil7Ul6l7x1C0ay3WEDPZ_RU67usfKeeJ4UHV6FE3SmrgxLRbMhIhrxQ0rmNgtnMvBpp5m-H1mKp3XTJkqAsr_CbgjFOf3UNYgnjpwZX7oQ1sqP-G60ICrs7AfLjAiQ1PcXPtrNqhncar_CpDzWd-HwCRzfnl6nmKmHvL6OlOyHu9HdGJwp3HLFSCsFs-uf_Yu0skLPPDtx4l_Zqe7HJw"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Taladro inalámbrico 12V</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">DEWALT</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-black mb-2">$ 89.990</p>
+<a class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20VOLTEX,%20consulto%20por%20Taladro%20Dewalt">
+<i class="fa-brands fa-whatsapp text-xs"></i> Consultar
+          </a>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded">En stock</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Cable UTP Cat 6 (305 m)" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLaFFmGFWHAvJBXrGiPQRA_vz4_M03UkrxOT2mySYoEZwAVV_Dc7ClFZpMs4o9XHGBsMYnKtws6m7dliwmpeSPbmk-9S7NuW9cjqD2dZuTMfB7Np7gMpmVqhxHoQ8v_l8t4Z_ZaloIuL_F3xtdyMmblsuI38Jd54CyP4vDU3QmsgI0odJJoI94Hp6zsGOJG1jjVGMVFHu_PAIJ5bNYzjAjk7J9wtgwSU0gCYsu4RvBbf7R0QBRXq2svA"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Cable UTP Cat 6 (305 m)</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">LINKMADE</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-black mb-2">$ 59.990</p>
+<a class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20VOLTEX,%20consulto%20por%20Cable%20UTP">
+<i class="fa-brands fa-whatsapp text-xs"></i> Consultar
+          </a>
+</div>
+</article>
+<!-- Product Card 6 (Agotado) -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm opacity-90" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-rose-100 text-rose-700 text-[9px] font-bold px-2 py-0.5 rounded">Agotado</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Ampolleta LED 15W E27" class="max-h-full max-w-full object-contain grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfKK5sI7w2x17VALrTZWwiiZdCMrJPMz-_oqnAuXMXJNjS5wje8SGKYAYCqwCp_LxXKcXgvxOPj_yDq8D2nMGDnV2YSSMEGUOud99KkJL41n8juDT65IewUpBSdy1gqtFf818S1c_XIgM0vlN943xetlyPJ48D7zVr5qCCHGWyw50OQQbGaXbNZzsiwYTFDln8n5IBly897Fjjz93ko1zLnQeHmJmPfTVv0QSJMFR5bpAidCKarqtrQA"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Ampolleta LED 15W E27</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">OSRAM</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-zinc-500 mb-2">$ 3.990</p>
+<button class="tap-target w-full bg-zinc-200 text-zinc-500 text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 cursor-not-allowed" disabled="">
+            Sin Stock
+          </button>
+</div>
+</article>
+<!-- Product Card 7 -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded">En stock</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Tablero sobrepuesto 12 módulos" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTr5Mhxro690U0apdLOe9ZIwjo9T5_qDSZYzR--2f3taIYOkIwc7AmsfytsF5_599QL8t9voCG1Kk_-xc4ZOWOUbCAV_L8j5-suHhydFCFvHx8eND3fUsWLJOpNeokiT1PBNkURdfkbRBxL9WSde-GU_BQGwzIwXqV5B4EGuoLndeaCFDj-Vqmx8sFJiuzpsozsNk6GsplCY5gcU6QGa_DYnB0b2xGPCgxPSInuthrfUFt6qm7vScYbg"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Tablero sobrepuesto 12 mód.</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">SINEC</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-black mb-2">$ 27.990</p>
+<a class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20VOLTEX,%20consulto%20por%20Tablero%2012%20modulos">
+<i class="fa-brands fa-whatsapp text-xs"></i> Consultar
+          </a>
+</div>
+</article>
+<!-- Product Card 8 -->
+<article class="bg-white rounded-xl border border-zinc-200 p-2.5 flex flex-col justify-between shadow-sm" data-purpose="product-card">
+<div>
+<div class="flex justify-start mb-2">
+<span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-2 py-0.5 rounded">Poco stock</span>
+</div>
+<div class="w-full h-28 bg-zinc-50 rounded-lg flex items-center justify-center p-2 mb-2">
+<img alt="Cable flexible 4 mm²" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmWR0rqsDm6Wt0F0iW9KVV9y8sVIlkHtsemQl-7LbKITLmOKu1z_8X6LXPwpp5FHrdm0OFFtK4Qiq5V53qJs9_yhz_V4dZqghmn559hCjaJoFsHSxXEnKVWj21RmlQJ-qP6oCsgtkePgdqvpXx_u1EdRU3VebYTN7Ap4-2BrbcbpG4J7bJm75oNfgoZgpniskdADzkx1iyDIUBESh6-vkUqR2RC7M0pVip5UmjxS45za9OYUDcaWK95Q"/>
+</div>
+<h3 class="text-xs font-bold text-zinc-900 leading-snug line-clamp-2">Cable flexible 4 mm² (100 m)</h3>
+<p class="text-[10px] uppercase font-bold text-zinc-400 mt-0.5">INDECO</p>
+</div>
+<div class="mt-3">
+<p class="text-sm font-black text-black mb-2">$ 42.990</p>
+<a class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-[10px] font-extrabold uppercase rounded-lg py-2 px-1 flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20VOLTEX,%20consulto%20por%20Cable%20flexible%204mm">
+<i class="fa-brands fa-whatsapp text-xs"></i> Consultar
+          </a>
+</div>
+</article>
+</div>
+</section>
+<!-- END: FeaturedCatalog -->
+<!-- BEGIN: LiveStockBanner -->
+<section class="bg-brand-yellow px-4 py-3.5 my-3 flex items-center gap-3 border-y border-amber-400" data-purpose="live-stock-alert">
+<div class="w-9 h-9 rounded-full bg-black text-brand-yellow flex items-center justify-center flex-shrink-0 text-sm">
+<i class="fa-regular fa-clock"></i>
+</div>
+<div class="text-left">
+<h3 class="text-xs font-black uppercase text-black leading-tight">Stock actualizado hoy</h3>
+<p class="text-[11px] font-semibold text-zinc-900">Revisa la disponibilidad en tiempo real de nuestros productos.</p>
+</div>
+</section>
+<!-- END: LiveStockBanner -->
+<!-- BEGIN: ServicesSection -->
+<section class="bg-[#0D0D0D] text-white px-4 py-8" data-purpose="services-showcase" id="servicios">
+<div class="mb-5">
+<span class="text-[10px] font-black uppercase tracking-widest text-brand-yellow">Soluciones profesionales</span>
+<h2 class="text-xl font-black text-white">Nuestros servicios</h2>
+<p class="text-xs text-zinc-400">Instalaciones, mantención y automatización para tu proyecto.</p>
+</div>
+<!-- Mobile Service Cards -->
+<div class="space-y-3 mb-6">
+<!-- Service 1 -->
+<div class="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800 flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-zinc-800 text-brand-yellow flex items-center justify-center text-lg flex-shrink-0">
+<i class="fa-solid fa-bolt"></i>
+</div>
+<div>
+<h3 class="text-sm font-bold text-white">Instalaciones eléctricas</h3>
+<p class="text-xs text-zinc-400 mt-0.5">Proyectos y obras eléctricas en baja y media tensión bajo norma SEC.</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800 flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-zinc-800 text-brand-yellow flex items-center justify-center text-lg flex-shrink-0">
+<i class="fa-solid fa-wrench"></i>
+</div>
+<div>
+<h3 class="text-sm font-bold text-white">Mantención preventiva</h3>
+<p class="text-xs text-zinc-400 mt-0.5">Diagnóstico y corrección de fallas para locales, edificios e industrias.</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800 flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-zinc-800 text-brand-yellow flex items-center justify-center text-lg flex-shrink-0">
+<i class="fa-solid fa-industry"></i>
+</div>
+<div>
+<h3 class="text-sm font-bold text-white">Automatización industrial</h3>
+<p class="text-xs text-zinc-400 mt-0.5">Tableros de fuerza y control, sensores, variadores y programación PLC.</p>
+</div>
+</div>
+</div>
+<!-- CTA Service -->
+<a class="tap-target w-full py-3 border-2 border-brand-yellow text-brand-yellow hover:bg-brand-yellow hover:text-black font-extrabold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all" href="#contacto">
+<span>Cotizar servicio especializado</span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: StoreLocationSection -->
+<section class="px-4 py-7 bg-white" data-purpose="store-location" id="local">
+<div class="mb-4">
+<h2 class="text-lg font-black text-black">El local</h2>
+<p class="text-xs text-zinc-500">Visítanos en nuestra tienda y recibe asesoría técnica especializada.</p>
+</div>
+<!-- Store Info Card -->
+<div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 space-y-3.5 mb-4 shadow-sm">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
+<i class="fa-solid fa-location-dot"></i>
+</div>
+<div>
+<h3 class="text-xs font-bold text-zinc-900 uppercase tracking-wide">Dirección</h3>
+<p class="text-xs text-zinc-700 font-medium">Av. Los Aromos 1280, Concepción, Chile</p>
+</div>
+</div>
+<div class="flex items-start gap-3 border-t border-zinc-200 pt-3">
+<div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
+<i class="fa-regular fa-clock"></i>
+</div>
+<div>
+<h3 class="text-xs font-bold text-zinc-900 uppercase tracking-wide">Horario de atención</h3>
+<p class="text-xs text-zinc-700 font-medium">Lun - Vie: 08:30 - 18:30 hrs</p>
+<p class="text-xs text-zinc-700 font-medium">Sáb: 09:00 - 14:00 hrs</p>
+</div>
+</div>
+<!-- Static Map Simulation -->
+<div class="rounded-xl overflow-hidden border border-zinc-300 relative h-36 bg-zinc-200 mt-2">
+<img alt="Mapa Voltex" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfEwT6EmCt13kn8aGQlpfxE93pCv6_teR6Fr1LYy4N2e5hejXvyrtzFo-O919OiTZ_jfWR9z8AlVbAJ-hn2WugJK2aQq33btjdNnbUr0v4uq0r7EounSk1BjoEu9HIThDP0G6BDlMi4HIp3iy1T1YwR3KQXic_fi527lXdi5bx2s_losUs9_mA7cYU6_zGm5KmzTwpOIQM75IaiuApeubAAStGDOr5tIJFxwuPAKNjpg8LN18Jgc5gFA"/>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<div class="bg-brand-yellow text-black font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1.5 border border-black/20">
+<i class="fa-solid fa-bolt"></i> Voltex - La Casa del Electricista
+          </div>
+</div>
+</div>
+<a class="tap-target w-full bg-brand-yellow active:bg-brand-yellowHover text-black text-xs font-extrabold uppercase rounded-lg py-3 flex items-center justify-center gap-2 mt-2" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<i class="fa-solid fa-diamond-turn-right text-sm"></i>
+<span>Ver en Google Maps</span>
+</a>
+</div>
+</section>
+<!-- END: StoreLocationSection -->
+<!-- BEGIN: QuickContactFormSection -->
+<section class="px-4 py-7 bg-zinc-100 border-t border-zinc-200" data-purpose="quick-contact" id="contacto">
+<div class="mb-4">
+<h2 class="text-lg font-black text-black">Contacto directo</h2>
+<p class="text-xs text-zinc-600">¿Tienes dudas sobre medidas, stock o necesitas cotización formal?</p>
+</div>
+<!-- Direct WhatsApp button -->
+<a class="tap-target w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase rounded-xl py-3.5 px-4 flex items-center justify-center gap-2.5 shadow-sm mb-4" href="https://wa.me/">
+<i class="fa-brands fa-whatsapp text-lg"></i>
+<span>Escríbenos por WhatsApp</span>
+</a>
+<!-- Instagram Pill -->
+<a class="tap-target w-full bg-white border border-zinc-300 text-zinc-800 font-bold text-xs rounded-xl py-3 px-4 flex items-center justify-center gap-2 mb-6" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-instagram text-pink-600 text-base"></i>
+<span>Síguenos en Instagram</span>
+</a>
+<!-- Contact Mini Form -->
+<div class="bg-white rounded-2xl p-4 border border-zinc-200 shadow-sm" data-purpose="contact-card-form">
+<h3 class="text-xs font-black uppercase text-zinc-800 mb-3 tracking-wide">Envíanos un mensaje</h3>
+<form class="space-y-3" onsubmit="event.preventDefault(); alert('Mensaje enviado. Te responderemos pronto.');">
+<div>
+<label class="block text-[11px] font-bold text-zinc-700 mb-1">Nombre completo</label>
+<input class="w-full text-xs rounded-lg border-zinc-300 focus:border-black focus:ring-black py-2.5 px-3 bg-zinc-50" placeholder="Ej. Juan Pérez" required="" type="text"/>
+</div>
+<div>
+<label class="block text-[11px] font-bold text-zinc-700 mb-1">Correo electrónico</label>
+<input class="w-full text-xs rounded-lg border-zinc-300 focus:border-black focus:ring-black py-2.5 px-3 bg-zinc-50" placeholder="correo@ejemplo.cl" required="" type="email"/>
+</div>
+<div>
+<label class="block text-[11px] font-bold text-zinc-700 mb-1">Detalle del requerimiento</label>
+<textarea class="w-full text-xs rounded-lg border-zinc-300 focus:border-black focus:ring-black py-2.5 px-3 bg-zinc-50 resize-none" placeholder="Escribe aquí los productos o servicios que necesitas..." required="" rows="3"></textarea>
+</div>
+<button class="tap-target w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-xs font-extrabold uppercase rounded-lg py-3 flex items-center justify-center gap-1.5 shadow" type="submit">
+<span>Enviar mensaje</span>
+<i class="fa-solid fa-paper-plane text-xs"></i>
+</button>
+</form>
+</div>
+</section>
+<!-- END: QuickContactFormSection -->
+<!-- BEGIN: MobileFooter -->
+<footer class="bg-black text-white px-4 pt-8 pb-10 border-t border-zinc-800" data-purpose="mobile-footer">
+<div class="flex flex-col items-center text-center">
+<img alt="VOLTEX Logo" class="h-14 w-14 object-contain rounded-full border border-brand-yellow/40 mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9XUDhUtJSfjCrD76uLdjjpzc3Quk5jEmmQIIwAGriaVW5Iywxon-J32EbZRiN246loQNVg1l-MrpK5lJgR1dT2XCIBwrstR0VPJHTgcz9Gh-_rDr9Ffx929WlC-dipS6sdlWXLuL4wVTMnJE2w2ygAneZ9Fgn5hF-bMY7L35ORrTIU4CvQbLC0MhTu_8oINq4tg2uCNuU26F1EgcXRAysrQCsvPW3OhovAV0INmyDbeAVKJk4H9R9Ng"/>
+<span class="text-lg font-black tracking-widest text-white">VOLTEX</span>
+<p class="text-[10px] tracking-widest uppercase text-zinc-400 font-bold mb-4">La Casa del Electricista</p>
+<!-- Social Links -->
+<div class="flex items-center gap-4 text-zinc-400 text-lg mb-6">
+<a aria-label="Instagram" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:text-brand-yellow" href="#inicio"><i class="fa-brands fa-instagram"></i></a>
+<a aria-label="Facebook" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:text-brand-yellow" href="#inicio"><i class="fa-brands fa-facebook-f"></i></a>
+<a aria-label="TikTok" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:text-brand-yellow" href="#inicio"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+<!-- Navigation links in footer -->
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs font-medium text-zinc-400 mb-6">
+<a class="hover:text-white" href="#catalogo">Catálogo</a>
+<span>•</span>
+<a class="hover:text-white" href="#servicios">Servicios</a>
+<span>•</span>
+<a class="hover:text-white" href="#local">El local</a>
+<span>•</span>
+<a class="hover:text-white" href="#contacto">Contacto</a>
+</div>
+<!-- Copyright -->
+<p class="text-[10px] text-zinc-500">
+        © 2026 VOLTEX — La Casa del Electricista.<br/>Todos los derechos reservados.
+      </p>
+</div>
+</footer>
+<!-- END: MobileFooter -->
+<!-- BEGIN: FloatingWhatsAppButton -->
+<!-- Thumb-friendly floating button bottom right -->
+<aside class="fixed bottom-5 right-4 z-50" data-purpose="floating-whatsapp">
+<a aria-label="Contactar por WhatsApp ahora" class="tap-target w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl active:scale-95 transition-transform border-2 border-white/20" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+</aside>
+<!-- END: FloatingWhatsAppButton -->
+</body></html>
+
