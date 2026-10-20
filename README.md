@@ -1,27 +1,33 @@
-# VOLTEX storefront
+# VOLTEX — La Casa del Electricista
 
-Sitio estático responsive multipágina basado en los diseños Stitch adjuntos. Cada sección principal abre su propia página: `index.html`, `catalogo.html`, `servicios.html`, `local.html` y `contacto.html`. Sin backend ni inventario conectado.
+Sitio estático multipágina responsive para publicar con **GitHub Pages**. Las páginas están al nivel raíz para que GitHub las sirva directamente:
 
-## Ejecutar localmente
+- `index.html` — Inicio
+- `catalogo.html` — catálogo con búsqueda, filtros y consulta por WhatsApp
+- `servicios.html` — servicios
+- `local.html` — ubicación y horarios configurables
+- `contacto.html` — formulario de consulta
 
-Requiere Node.js instalado. Desde esta carpeta:
+## Ver localmente
 
-```sh
-npm start
-```
+La forma más simple es usar VS Code con la extensión **Live Server**: abre esta carpeta, clic derecho en `index.html` → **Open with Live Server**. También puedes subir la carpeta a GitHub y activar Pages.
 
-Abrir http://localhost:4173. No se requieren dependencias de npm.
+Con Node.js instalado, ejecuta `node server.js` desde esta carpeta y abre `http://localhost:4173`.
 
-## Configuración de negocio
+## Datos que debes configurar antes de publicar
 
-- `products.json`: productos, marca, precio referencial, categoría, estado de ejemplo e imagen.
-- `config.js`: número WhatsApp internacional en dígitos, dirección, horario y URL de Instagram.
-- `index.html`: contenido, secciones y estilos.
+1. `config.js`: número de WhatsApp en formato internacional solo dígitos (sin `+`), dirección, horarios y URL real de Instagram.
+2. `products.json`: reemplaza todos los valores de ejemplo por datos y stock verificados. No existe sincronización con inventario.
+3. `index.html`: contenido, imágenes/recursos de marca y textos.
 
-El formulario valida los campos y solo deriva a WhatsApp al configurar el número. Para recibir envíos sin que el cliente abra WhatsApp se necesita un backend/servicio de formularios. Nunca confiar el stock/precio a los datos de demostración.
+El formulario solo prepara un mensaje para WhatsApp después de configurar el número; no almacena ni envía información a un servidor. Para recibir consultas sin WhatsApp hace falta un backend o proveedor de formularios.
 
-## Publicación
+## Subir a GitHub y habilitar Pages
 
-Publicar los archivos estáticos en un hosting HTTPS que admita HTML/JS. Confirmar con VOLTEX teléfono, dirección, horario, redes, precios, inventario, permisos de imágenes y dominio antes de publicar. Reemplazar Tailwind CDN por CSS compilado para producción y definir política CSP según los recursos externos usados.
+1. Crea un repositorio en GitHub.
+2. Sube el **contenido de esta carpeta `github-pages`** a la raíz del repositorio (`index.html` debe quedar en la raíz, no dentro de otra carpeta).
+3. En GitHub abre **Settings → Pages**.
+4. En **Build and deployment**, selecciona **Deploy from a branch**, rama `main`, carpeta `/(root)` y guarda.
+5. Espera a que Pages publique y abre la URL que muestra esa pantalla.
 
-Las carpetas originales `stitch_voltex_e_commerce_storefront` conservan ambos HTML y capturas de referencia exportados.
+No se requieren dependencias ni proceso de compilación. Tailwind CSS y Font Awesome se cargan desde CDN; para ver el estilo, se requiere conexión a internet. Verifica que las imágenes externas sigan disponibles y que tengas permiso para publicarlas.

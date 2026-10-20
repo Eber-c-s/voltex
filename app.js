@@ -1,6 +1,10 @@
 (async () => {
   const config = window.VOLTEX_CONFIG || {};
   const products = await fetch('./products.json').then(r => r.json()).catch(() => []);
+  const address = document.querySelector('#store-address');
+  const hours = document.querySelector('#store-hours');
+  if (address && config.address) address.textContent = config.address;
+  if (hours && config.hours) hours.textContent = config.hours;
   const grid = document.querySelector('#products-grid');
   if (!grid) {
     const contactForm = document.querySelector('#contact-form');
@@ -9,7 +13,7 @@
   }
   function initializeContactForm(form, config) {
     const waUrl = message => config.whatsappNumber ? `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}` : '';
-    form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const name=form.querySelector('#contact-name')?.value,email=form.querySelector('#contact-email')?.value,message=form.querySelector('#contact-message')?.value;if(!config.whatsappNumber){document.querySelector('#form-status').textContent='Falta configurar WhatsApp en config.js. No se envió.';return;}document.querySelector('#form-status').textContent='Se abrirá WhatsApp para que revises y envíes tu consulta.';window.open(waUrl(`Consulta desde VOLTEX\nNombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`),'_blank','noopener,noreferrer')});
+    form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const name=form.querySelector('#contact-name')?.value,email=form.querySelector('#contact-email')?.value,message=form.querySelector('#contact-message')?.value,topic=form.querySelector('#contact-topic')?.value;if(!config.whatsappNumber){document.querySelector('#form-status').textContent='Falta configurar WhatsApp en config.js. No se envió.';return;}document.querySelector('#form-status').textContent='Se abrirá WhatsApp para que revises y envíes tu consulta.';window.open(waUrl(`Consulta desde VOLTEX\nTipo: ${topic}\nNombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`),'_blank','noopener,noreferrer')});
   }
   const money = n => '$' + new Intl.NumberFormat('es-CL').format(n) + ' CLP';
   const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -17,7 +21,7 @@
     ? `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`
     : `https://wa.me/?text=${encodeURIComponent(message + ' (Configurar el número de VOLTEX en config.js)')}`;
   function render() {
-    const term = normalize(document.querySelector('#hero-search')?.value || '');
+    const term = normalize(document.querySelector('#hero-search')?.value || new URLSearchParams(location.search).get('q') || '');
     const cat = document.querySelector('#filter-categoria')?.value || '';
     const brand = document.querySelector('#filter-marca')?.value || '';
     const states = [...document.querySelectorAll('.availability-filter:checked')].map(x => x.dataset.status);
@@ -33,8 +37,11 @@
   const queryCategory = new URLSearchParams(location.search).get('categoria');
   if (queryCategory) { const sel=document.querySelector('#filter-categoria'); const opt=[...sel.options].find(o=>normalize(o.value||o.textContent)===normalize(queryCategory)); if(opt) sel.value=opt.value||opt.textContent; }
   document.querySelectorAll('[data-category]').forEach(a=>{a.href='catalogo.html?categoria='+encodeURIComponent(a.dataset.category)});
+  const homeSearch=document.querySelector('#hero-search');
+  if(homeSearch){const link=homeSearch.parentElement.querySelector('a[href="catalogo.html"]');link?.addEventListener('click',()=>{if(homeSearch.value.trim())link.href='catalogo.html?q='+encodeURIComponent(homeSearch.value.trim())});}
   document.querySelectorAll('a[href="https://wa.me/"]').forEach(a=>{a.href=waUrl('Hola, quisiera consultar productos y servicios de VOLTEX.');a.rel='noopener noreferrer';a.target='_blank'});
   document.querySelectorAll('a[aria-label="Instagram"]').forEach(a=>{if(config.instagramUrl){a.href=config.instagramUrl;a.target='_blank';a.rel='noopener noreferrer'}else{a.href='#contacto';a.title='Instagram pendiente de configurar'}});
 
   render();
 })();
+
